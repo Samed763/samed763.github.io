@@ -1,0 +1,107 @@
+/*index.html*/
+/* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: darkslategrey;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    height: 105vh; /* Sayfa yüksekliği */
+}
+.headerfint{
+    margin: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+
+}
+
+/* Login Form Container */
+.login-container {
+    background-color: white; /* Arka plan rengi */
+    padding: 30px;
+    border-radius: 8px; /* Köşe yuvarlatma */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    width: 300px; /* Genişlik */
+    text-align: center; /* İçerik ortalama */
+}
+
+/* Başlık stili */
+h2 {
+    margin-bottom: 20px;
+    color: #333; /* Yazı rengi */
+}
+
+/* Input alanları */
+input[type="text"], input[type="password"] {
+    width: 100%; /* Yüzde 100 genişlik */
+    padding: 10px;
+    margin: 10px 0; /* Üst ve alt boşluk */
+    border: 1px solid #ccc; /* Sınır rengi */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    box-sizing: border-box; /* Padding ve border dahil */
+    font-size: 16px;
+}
+
+/* Input focus efektleri */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #5b9bd5; /* Odaklanıldığında sınır rengi */
+    outline: none; /* Odak noktasındaki mavi çerçeveyi kaldır */
+}
+
+/* Login butonu */
+button {
+    width: 100%; /* Yüzde 100 genişlik */
+    padding: 12px;
+    background-color: #5b9bd5; /* Buton arka plan rengi */
+    color: white; /* Buton yazı rengi */
+    border: none;
+    border-radius: 4px; /* Köşe yuvarlatma */
+    font-size: 16px;
+    cursor: pointer; /* Fare işareti */
+    margin-top: 10px;
+    transition: background-color 3s ease; /* Hoverda renk değişimi efekti */
+}
+
+/* Buton hover efekti */
+button:hover {
+    background-color: #4a8ac1; /* Hoverda buton rengi */
+}
+
+
+/* Hata mesajı */
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.regiserlink {
+    margin-top: 100px; /* Üstten 100px boşluk */
+    color: red; /* Kırmızı yazı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-weight: bold; /* Kalın yazı */
+    transition: color 0.3s ease; /* Renk değişim efekti */
+}
+
+.regiserlink:hover {
+    color: darkred; /* Hover durumunda koyu kırmızı */
+    text-decoration: underline; /* Hover durumunda alt çizgi */
+}
+/* E-posta input alanı */
+input[type="email"] {
+    width: 100%; /* Yüzde 100 genişlik */
+    padding: 10px;
+    margin: 10px 0; /* Üst ve alt boşluk */
+    border: 1px solid #ccc; /* Sınır rengi */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    box-sizing: border-box; /* Padding ve border dahil */
+    font-size: 16px;
+}
+
+/* E-posta input focus efektleri */
+input[type="email"]:focus {
+    border-color: #5b9bd5; /* Odaklanıldığında sınır rengi */
+    outline: none; /* Odak noktasındaki mavi çerçeveyi kaldır */
+}

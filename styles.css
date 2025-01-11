@@ -1,0 +1,886 @@
+:root {
+    --color-darkslategrey: #688267;
+    --color-white: white;
+    --color-red: #800000;
+    --color-121a1a: rgb(10, 17, 17);
+    --color-79a6a6: #688267;
+    --color-black: #000000;
+    --color-f9f9f9: #f9f9f9;
+    --color-ddd: #ddd;
+    --color-333: #333;
+    --color-007bff: #007bff;
+    --color-0056b3: #0056b3;
+    --color-5b9bd5: #5b9bd5;
+    --color-f4f4f4: #f4f4f4;
+    --color-888: #888;
+    --color-green: green;
+}
+
+/* Genel sayfa stilini düzenle */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Kenarlık ve dolguyu toplam genişlik/yüksekliğe dahil eder */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar (Menü) */
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: var(--color-darkslategrey);
+    display: flex; /* Navbar öğelerini yatayda hizalamak için */
+    justify-content: space-around; /* Öğeler arasında eşit boşluk */
+    align-items: center; /* Öğeleri dikeyde ortalamak için */
+}
+
+.navbar a {
+    text-decoration: none; /* Bağlantı alt çizgisini kaldır */
+    color: var(--color-white); /* Bağlantı rengini beyaz yap */
+    font-size: 18px;
+    padding: 15px;
+}
+
+.navbar a.logout {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a.logout:hover {
+    background-color: var(--color-red);
+}
+
+.navbar a:hover {
+    color: var(--color-red); /* Link üzerine gelindiğinde kırmızı renk */
+}
+
+/* Evraklar Bölümü */
+.documents {
+    padding: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--color-darkslategrey);
+}
+
+/* Evrak Kartları Düzenle */
+/* Evrak Kartlarını Sayfa Ortasında Hizalamak İçin */
+.document-list {
+    display: flex; /* Flexbox düzeni kullan */
+    flex-wrap: wrap; /* Kartların sarmalamasına izin ver */
+    justify-content: center; /* Kartları yatayda ortala */
+    align-items: center; /* Kartları dikeyde ortala */
+    gap: 20px; /* Kartlar arasında boşluk */
+    margin-top: 20px;
+}
+
+/* Her bir Evrak Kartı */
+.document-card {
+    background-color: var(--color-79a6a6); /* Evrak kartı arka planını pembe yap */
+    border: 2px solid var(--color-black); /* Kenarlık rengi ve kalınlığı */
+    padding: 20px; /* İçerik etrafında boşluk */
+    margin: 10px; /* Kartlar arasında boşluk */
+    border-radius: 8px; /* Köşe yuvarlama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge ekleyerek kartı belirginleştir */
+    background-clip: padding-box; /* Arka planın kenarlıkla uyumlu olmasını sağlar */
+    width: 250px; /* Kartların genişliğini sabitle */
+    text-align: center; /* Kart içeriğini ortala */
+}
+.details-link {
+    
+    font-size: 18px; /* Yazı boyutunu büyütme */
+    font-weight: bold; /* Yazıyı kalın yapma */
+    color: var(--color-white); /* Bağlantı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldırma */
+    padding: 10px 20px; /* Bağlantıya iç boşluk ekleme */
+    background-color: var(--color-darkslategrey); /* Bağlantı arka plan rengi */
+    border-radius: 5px; /* Kenarları yuvarlama */
+    transition: background-color 0.3s ease; /* Arka plan rengi geçiş efekti */
+}
+
+.details-link:hover {
+    background-color: var(--color-121a1a); /* Üzerine gelindiğinde arka plan rengini değiştirme */
+}
+
+
+
+
+.document-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: var(--color-333);
+}
+
+.document-info p strong {
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-5b9bd5);
+}
+/* document-detail sayfası için stil */
+.document-detail {
+    padding: 30px;
+    text-align: left; /* Align text to the left */
+    background-color: var(--color-f9f9f9); /* Light background color */
+    border: 1px solid var(--color-ddd); /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Space below the detail section */
+}
+
+.document-detail h2 {
+    color: var(--color-darkslategrey);
+    margin-bottom: 20px;
+    font-size: 24px; /* Larger font size */
+}
+
+.document-detail p {
+    font-size: 16px;
+    color: var(--color-333);
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+.document-detail p strong {
+    font-weight: bold;
+    color: var(--color-darkslategrey); /* Darker color for strong text */
+}
+
+.document-detail p:last-child {
+    margin-bottom: 0; /* Remove margin from the last paragraph */
+}
+
+.document-info, .document-details {
+    margin-bottom: 20px;
+}
+
+.document-info p, .document-details p {
+    font-size: 16px;
+}
+
+.document-details h3 {
+    color: var(--color-darkslategrey);
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.create-document-button {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-darkslategrey); /* Yeşil arka plan rengi */
+    color: var(--color-white); /* Yazı rengi beyaz */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* Alt çizgi yok */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    transition: background-color 0.3s ease; /* Hover efekti */
+    text-align: center;
+}
+
+/* Eğer butonu tam olarak sayfanın ortasında görmek istiyorsanız, bu kodu da ekleyebilirsiniz */
+.documents {
+    display: flex;
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center; /* Dikeyde ortalama */
+    flex-direction: column; /* Buton ve evrakların alt alta sıralanmasını sağlar */
+}
+
+
+.create-document-button:hover {
+    background-color: var(--color-121a1a); /* Üzerine gelindiğinde arka plan rengini değiştir */
+}
+/* Genel sayfa düzeni */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-f4f4f4);
+}
+
+/* Navbar (Menü) */
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: var(--color-darkslategrey);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 18px;
+    padding: 15px;
+}
+
+.navbar a:hover {
+    color: var(--color-red);
+}
+
+/* Form konteyneri */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form başlığı */
+.form-container h2 {
+    text-align: center;
+    color: var(--color-darkslategrey);
+    margin-bottom: 20px;
+}
+
+/* Form elemanları */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--color-333);
+}
+
+form input, 
+form textarea, 
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button.submit-button {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button.submit-button:hover {
+    background-color: var(--color-121a1a);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-5b9bd5);
+}
+.toggle-header {
+    cursor: pointer;
+    color: var(--color-007bff);
+    text-decoration: underline;
+}
+
+.toggle-header:hover {
+    color: var(--color-0056b3);
+}
+
+#update-form {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-ddd);
+    border-radius: 5px;
+    background-color: var(--color-f9f9f9);
+}
+
+/* Filtreleme Formu */
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Filtreleme Alanları */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    color: var(--color-333);
+}
+
+.filter-group input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+/* Filtreleme Butonu */
+.filter-button {
+    background-color: var(--color-darkslategrey); /* Buton rengi eski tema ile uyumlu */
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+
+.filter-button:hover {
+    background-color: var(--color-121a1a); /* Hover durumunda daha koyu renk */
+}
+/* Genel stil */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-333);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Select kutusu stili */
+select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--color-f9f9f9);
+    color: var(--color-333);
+    appearance: none; /* Tarayıcı varsayılan oku kaldırır */
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+/* Select hover ve focus durumları */
+select:hover {
+    border-color: var(--color-888);
+}
+
+select:focus {
+    border-color: var(--color-007bff);
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Option stili */
+option {
+    background-color: #fff;
+    color: var(--color-333);
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Seçili option özel rengi */
+select option:checked {
+    background-color: var(--color-007bff);
+    color: var(--color-white);
+}
+
+.pagedata {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    gap: 20px; /* Add space between the buttons */
+    margin-top: 20px;
+}
+
+.create-document-button {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.create-document-button:hover {
+    background-color: var(--color-121a1a);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 20px auto; /* Adjust margin to add some space at the top */
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+}
+
+.content h1, .content h2, .content h3 {
+    color: var(--color-darkslategrey);
+    text-align: center;
+}
+
+.content p {
+    font-size: 16px;
+    color: var(--color-333);
+    text-align: center;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    background-color: var(--color-f4f4f4);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content ul li span {
+    font-weight: bold;
+    color: var(--color-darkslategrey);
+}
+
+.content ul li span.amount {
+    color: var(--color-007bff);
+}
+
+.content ul li span.date {
+    color: var(--color-888);
+}
+
+.amount.balance {
+    font-weight: bold;
+    font-size: 24px; /* Increase font size */
+    padding: 10px; /* Add padding */
+}
+
+.financial-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.financial-summary div {
+    background-color: var(--color-f4f4f4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+.financial-summary div p {
+    font-size: 18px;
+    color: var(--color-333);
+}
+
+.financial-summary div p span {
+    font-weight: bold;
+    color: var(--color-007bff);
+}
+
+.case-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.case-summary div {
+    background-color: var(--color-f4f4f4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+.case-summary div p {
+    font-size: 18px;
+    color: var(--color-333);
+}
+
+.case-summary div p span {
+    font-weight: bold;
+    color: var(--color-007bff);
+}
+
+.report-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.report-summary > div {
+    flex: 1 1 45%; /* Two columns */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--color-f4f4f4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.report-summary > div:nth-child(6n+1) {
+    clear: both;
+}
+
+.report-summary h3 {
+    color: var(--color-darkslategrey);
+    margin-bottom: 10px;
+}
+
+.report-summary p {
+    font-size: 18px;
+    color: var(--color-333);
+}
+
+.report-summary p span {
+    font-weight: bold;
+    color: var(--color-007bff);
+}
+
+.amount.expense {
+    color: red;
+}
+
+.amount.balance {
+    font-weight: bold;
+    color: var(--color-green);
+    font-size: 24px; /* Increase font size */
+    padding: 10px; /* Add padding */
+}
+
+.employees {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employees h2 {
+    color: var(--color-darkslategrey);
+    text-align: center;
+}
+
+.employees ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.employees ul li {
+    background-color: var(--color-f4f4f4);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employees ul li span {
+    font-weight: bold;
+    color: var(--color-darkslategrey);
+}
+
+.employees ul li span.amount {
+    color: var(--color-007bff);
+}
+
+.employees ul li span.date {
+    color: var(--color-888);
+}
+
+.employees ul li span.status {
+    color: var(--color-007bff);
+}
+
+.employee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.employee-card {
+    background-color: var(--color-79a6a6);
+    border: 2px solid var(--color-black);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    width: 250px;
+    text-align: center;
+}
+
+/* Yaklaşan Ödemeler Bölümü */
+.upcoming-payments {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-payments h2 {
+    color: var(--color-darkslategrey);
+    text-align: center;
+}
+
+.payment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.payment-card {
+    background-color: var(--color-79a6a6);
+    border: 2px solid var(--color-black);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    width: 250px;
+    text-align: center;
+}
+
+.payment-card p {
+    font-size: 16px;
+    color: var(--color-333);
+    margin: 10px 0;
+}
+
+.payment-card p strong {
+    font-weight: bold;
+    color: var(--color-darkslategrey);
+}
+
+/* Yaklaşan Alarmlar Bölümü */
+.upcoming-alarms {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-alarms h2 {
+    color: var(--color-darkslategrey);
+    text-align: center;
+}
+
+.alarm-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.alarm-card {
+    background-color: var(--color-79a6a6);
+    border: 2px solid var(--color-black);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    width: 250px;
+    text-align: center;
+}
+
+.alarm-card p {
+    font-size: 16px;
+    color: var(--color-333);
+    margin: 10px 0;
+}
+
+.alarm-card p strong {
+    font-weight: bold;
+    color: var(--color-333);
+}
+
+/* Alarmı İnaktif Yap Butonu */
+.alarm-card .submit-button {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.alarm-card .submit-button:hover {
+    background-color: var(--color-121a1a);
+}
+
+header {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-color: var(--color-f4f4f4);
+    min-height: 80vh; /* Ensures the main content takes up most of the screen */
+}
+
+footer {
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-darkslategrey);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+
+}
+
+.return-button:hover {
+    background-color: var(--color-121a1a);
+}
